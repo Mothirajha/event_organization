@@ -10,16 +10,16 @@ require 'csv'
 users_filepath = Rails.public_path.to_s + '/users.csv'
 events_filepath = Rails.public_path.to_s + '/events.csv'
 
-# User.transaction do
-#   CSV.foreach(users_filepath, headers: true) do |row|
-#     user_hash = row.to_hash
-#     user = User.new(user_hash)
-#     user.password = SecureRandom.alphanumeric
-#     user.save!
-#   end
-# end
+User.transaction do
+  CSV.foreach(users_filepath, headers: true) do |row|
+    user_hash = row.to_hash
+    user = User.new(user_hash)
+    user.password = SecureRandom.alphanumeric
+    user.save!
+  end
+end
 
-# Event.transaction do
+Event.transaction do
   CSV.foreach(events_filepath, headers: true) do |row|
     event_hash = row.to_hash
     rsvp_data = event_hash.delete("users#rsvp")
@@ -43,6 +43,6 @@ events_filepath = Rails.public_path.to_s + '/events.csv'
       p event_hash
     end
 
-  # end
+  end
 end
   

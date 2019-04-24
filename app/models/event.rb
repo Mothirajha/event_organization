@@ -1,8 +1,8 @@
 class Event < ApplicationRecord
 
   # Associations
-  has_many :user_events
-  has_many :users, through: :user_events
+  has_many :users_events
+  has_many :users, through: :users_events
 
   # Validations
   validates :title, presence: true

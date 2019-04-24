@@ -1,25 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Install Postgresql
 
-Things you may want to cover:
+Create user - avaamo with password - avaamo
 
-* Ruby version
+Install ruby 2.6.2
 
-* System dependencies
+Clone the project repository and run bundle install
 
-* Configuration
+Then run rails db:setup
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# event_organization
+Db will be get created and seed file will be getting executed.
